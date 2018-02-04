@@ -1,0 +1,282 @@
+.hotel {
+	position: relative;
+	flex-basis: 100%;
+	height: 250px;
+	margin: 10px 0;
+	padding: 0;
+	border: 2px solid white;
+	border-radius: 3px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&--nophoto {
+		background-color: $lightgray;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 5px 10px;
+		background-color: $darkblue-op;
+		
+		&:hover {
+			cursor: auto;
+		}
+	}
+
+	&__stars {
+		margin: 0;
+		height: 12px;
+	}
+
+	&__star {
+		display: inline-block;
+		vertical-align: top;
+		width: 10px;
+		height: 10px;
+		margin: 0 2px;
+		background-image: url(../img/icons/star.svg);
+		background-size: 10px 10px;
+		background-repeat: no-repeat;
+	}
+
+	&__name {
+		margin: 0 15% 0 0;
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: bold;
+	}
+
+	&__distance {
+		margin: 0;
+		font-size: 11px;
+		line-height: 16px;
+	}
+
+	&__rating {
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		margin: 0;
+		padding: 7px;
+		font-weight: bold;
+		border-radius: 10px;
+
+		&--two {
+			background-color: #b30707;
+		}
+
+		&--three {
+			background-color: #9c3535;
+		}
+
+		&--four {
+			background-color: #8f4747;
+		}
+
+		&--five {
+			background-color: #c4770a;
+		}
+
+		&--six {
+			background-color: #cccc00;
+		}
+
+		&--seven {
+			background-color: #809644;
+		}
+
+		&--eight {
+			background-color: #57913c;
+		}
+
+		&--nine {
+			background-color: #2e9406;
+		}
+
+		&--ten {
+			background-color: #32b000;
+		}
+	}
+
+	&__footer {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 5px 10px 5px 5px;
+		background-color: $darkblue-op;
+
+		&:hover {
+			cursor: auto;
+		}
+	}
+
+	&__options {
+		flex-basis: 60%;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__option {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 30px;
+		height: 30px;
+		margin: 2px;
+		background-color: $lightgray;
+		border-radius: 48%;
+
+		&--wifi {
+			background-image: url(../img/icons/wifi.svg);
+			background-size: 20px 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&::before {
+				content: 'Вай-Фай';
+				position: absolute;
+				top: -20px;
+				width: 40px;
+				height: 15px;
+				font-size: 8px;
+				line-height: 16px;
+				color: black;
+				text-align: center;
+				background-color: $lightgray;
+				border-radius: 3px;
+				opacity: 0;
+			}
+
+			&:hover::before {
+				opacity: 1;
+				transition: 0.4s;
+			}
+		}
+
+		&--parking {
+			background-image: url(../img/icons/parking.svg);
+			background-size: 20px 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&::before {
+				content: 'Паркинг';
+				position: absolute;
+				top: -20px;
+				width: 40px;
+				height: 15px;
+				font-size: 8px;
+				line-height: 16px;
+				color: black;
+				text-align: center;
+				background-color: $lightgray;
+				border-radius: 3px;
+				opacity: 0;
+			}
+
+			&:hover::before {
+				opacity: 1;
+				transition: 0.4s;
+			}
+		}
+
+		&--breakfast {
+			background-image: url(../img/icons/breakfast.svg);
+			background-size: 20px 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&::before {
+				content: 'Завтрак';
+				position: absolute;
+				top: -20px;
+				width: 40px;
+				height: 15px;
+				font-size: 8px;
+				line-height: 16px;
+				color: black;
+				text-align: center;
+				background-color: $lightgray;
+				border-radius: 3px;
+				opacity: 0;
+			}
+
+			&:hover::before {
+				opacity: 1;
+				transition: 0.4s;
+			}
+		}
+
+		&--pool {
+			background-image: url(../img/icons/pool.svg);
+			background-size: 20px 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&::before {
+				content: 'Бассейн';
+				position: absolute;
+				top: -20px;
+				width: 40px;
+				height: 15px;
+				font-size: 8px;
+				line-height: 16px;
+				color: black;
+				text-align: center;
+				background-color: $lightgray;
+				border-radius: 3px;
+				opacity: 0;
+			}
+
+			&:hover::before {
+				opacity: 1;
+				transition: 0.4s;
+			}
+		}
+	}
+
+	&__price {
+		flex-basis: 40%;
+		margin: 0;
+		text-align: right;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+}
+
+@media #{$tablet-widths} {
+	.hotel {
+		max-width: 48%;
+
+		&:nth-child(even) {
+			margin-left: 2%;
+		}
+
+		&__price {
+			font-size: 22px;
+		}
+	}
+}
+
+@media #{$desktop-widths} {
+	.hotel {
+		max-width: 31.33%;
+		margin-left: 2%;
+
+		&:nth-child(3n+1) {
+			margin-left: 0;
+		}
+	}
+}

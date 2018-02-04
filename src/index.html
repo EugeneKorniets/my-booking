@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Booking</title>
+	<link rel="icon" type="image/x-icon" href="img/favicons/favicon-128x128.ico" sizes="128x128">
+	<link rel="icon" type="image/x-icon" href="img/favicons/favicon-64x64.ico" sizes="64x64">
+	<link rel="icon" type="image/x-icon" href="img/favicons/favicon-32x32.ico" sizes="32x32">
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+	<header class="page-header">
+		<div class="page-header__semiopacity-bar">
+			<div class="page-header__container">
+				<div class="page-header__logo">
+					<h1>My-Booking</h1>
+				</div>
+				<div class="page-header__phone">
+					<p>Звоните!</p>
+					<a href="tel:+70000000000">+7 (000) 000-00-00</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-form">
+			<form action="" method="POST">
+				<label class="page-form__date-arrival">
+					Дата заезда:
+					<input type="date" name="date-arrival" required>
+				</label>
+				<label class="page-form__date-departure">
+					Дата выезда:
+					<input type="date" name="date-departure" required>
+				</label>
+				<label class="page-form__guests">
+					Гостей:
+					<input type="number" name="guests" value="2"
+    max="6" min="1" required>
+				</label>
+				<label class="page-form__rooms">
+					Номеров:
+					<input type="number" name="rooms" value="1"
+    max="6" min="1" required>
+				</label>
+				<button class="page-form__button">Поиск отелей</button>
+			</form>
+		</div>
+	</header>
+
+	<main class="page-content">
+
+		<div class="hotel-list">
+			<p class="hotel-list__result"></p>
+			<p class="hotel-list__date"></p>
+
+			<div class="hotel-list__filters">
+				<a href="#" class="hotel-list__filter" id="filter-expensive-hotels">
+					Сначала дорогие
+				</a>
+				<a href="#" class="hotel-list__filter" id="filter-cheap-hotels">
+					Сначала дешевые
+				</a>
+				<a href="#" class="hotel-list__filter" id="filter-stars">
+					От 2 звезд
+				</a>
+				<a href="#" class="hotel-list__filter" id="filter-rating">
+					Рейтинг не ниже 6
+				</a>
+				<a href="#" class="hotel-list__filter" id="filter-distance">
+					До центра не более 1 км
+				</a>
+				<a href="#" class="hotel-list__filter hotel-list__filter--selected" id="filter-reset">
+					Сбросить фильтры
+				</a>
+			</div>
+
+			<div class="hotel-list__container">
+				
+			</div>
+
+		</div>
+
+	</main>
+
+	<footer class="page-footer">
+		<div class="page-footer__container">
+			<div class="page-footer__logo">
+				<h1>My-Booking</h1>
+				<p class="page-footer__address">г. Москва, ул. Тверская, д.3</p>
+			</div>
+			<div class="page-footer__phone">
+				<p>Звоните!</p>
+				<a href="tel:+70000000000">+7 (000) 000-00-00</a>
+			</div>
+		</div>
+	</footer>
+
+	<div class="gallery gallery--hidden">
+		<button class="gallery__close-btn" type="button" title="Закрыть">Закрыть</button>
+		<div class="gallery__name"></div>
+		<div class="gallery__picture">
+			
+		</div>
+		<div class="gallery__controls">
+			<div class="gallery__control-prev"></div>
+			<div class="gallery__container">
+				<div class="gallery__thumbnails">
+					
+				</div>
+			</div>
+			<div class="gallery__control-next"></div>
+		</div>
+	</div>
+
+	<template id="hotel-template" style="display: none">
+		<article class="hotel">
+			<header class="hotel__header">
+				<p class="hotel__stars"></p>
+				<p class="hotel__name"></p>
+				<p class="hotel__distance"></p>
+				<p class="hotel__rating"></p>
+			</header>
+			<footer class="hotel__footer">
+				<ul class="hotel__options">
+				</ul>
+				<p class="hotel__price"></p>
+			</footer>
+		</article>
+	</template>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" data-main="js/main.js"></script>
+
+</body>
+
+</html>

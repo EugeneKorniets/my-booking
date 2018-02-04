@@ -1,0 +1,29 @@
+{
+  "name": "my-booking",
+  "version": "1.0.0",
+  "description": "My Booking - hotel reservation service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eugene Korniets",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "browser-sync": "^2.23.5",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ]
+}

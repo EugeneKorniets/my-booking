@@ -1,0 +1,28 @@
+@mixin container-fluid {
+	width: 87.5%;
+	max-width: 610px;
+	margin: 0 auto;
+	
+	@media #{$tablet-widths} {
+		width: 89%;
+		max-width: 940px;
+		margin: 0 auto;
+	}
+
+	@media #{$desktop-widths}  {
+		width: 80%;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+}
+
+@mixin visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+}

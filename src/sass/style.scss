@@ -1,0 +1,15 @@
+@import 'global/normalize.scss';
+
+@import "variables.scss";
+@import "mixins.scss";
+
+@import "global/scaffolding.scss";
+
+
+@import "block/page-header.scss";
+@import "block/page-form.scss";
+@import "block/page-content.scss";
+@import "block/hotel-list.scss";
+@import "block/hotel.scss";
+@import "block/page-footer.scss";
+@import "block/gallery.scss";

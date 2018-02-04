@@ -1,0 +1,117 @@
+.page-form {
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	right: 15px;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+	background-color: $bg-color;
+	border-radius: 8px;
+
+	&__date-arrival,
+	&__date-departure {
+		display: block;
+		padding: 0 0 10px 0;
+		font-size: 12px;
+	}
+
+	&__date-arrival input,
+	&__date-departure input {
+		padding: 5px;
+		color: gray;
+		border: 2px solid gray;
+		border-radius: 3px;
+		transition: 0.3s;
+
+		&:focus {
+			border-color: $bg-color-alternate;
+		}
+	}
+
+	&__guests,
+	&__rooms {
+		padding: 0 0 10px 5px;
+		font-size: 12px;
+	}
+
+	&__guests input,
+	&__rooms input {
+		width: 30px;
+		padding: 5px;
+		color: gray;
+		border: 2px solid gray;
+		border-radius: 3px;
+		transition: 0.3s;
+
+		&:focus {
+			border-color: $bg-color-alternate;
+		}
+	}
+
+	&__button {
+		display: inline-block;
+    vertical-align: top;
+    min-width: 80%;
+    margin: 10px 20px 0 20px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $bg-color-alternate;
+    border: 1px solid $bg-color-alternate;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+    	background-color: $bg-color;
+    }
+	}
+}
+
+@media #{$tablet-widths} {
+	.page-form {
+		&__date-arrival,
+		&__date-departure,
+		&__guests,
+		&__rooms {
+			display: inline-block;
+			vertical-align: top;
+			margin: 0;
+			padding: 5px 0;
+		}
+
+		& [name="date-arrival"],
+		& [name="date-departure"] {
+			max-width: 120px;
+		}
+
+		& [name="guests"],
+		& [name="rooms"] {
+			max-width: 30px;
+		}
+
+		&__guests,
+		&__rooms {
+			margin-top: 4px;
+		}
+	}
+}
+
+
+@media #{$desktop-widths} {
+	.page-form {
+		@include container-fluid;
+
+		&__button {
+			min-width: 5%;
+			margin: 5px 15px 0 5px;
+			padding: 5px;
+		}
+	}
+}
