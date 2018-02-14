@@ -92,7 +92,7 @@ define([
 		// очистка контейнера с превьюхами
 		this.element.querySelector('.gallery__thumbnails').innerHTML = '';
 		// очистка смещения контейнера
-		this.element.querySelector('.gallery__thumbnails').style.transform = '';
+		this.element.querySelector('.gallery__thumbnails').style.marginLeft = '';
 		// удаление обработчиков кликов переключения слайдов
 		this._controlPrev.removeEventListener('click', this._onPrevClick);
 		this._controlNext.removeEventListener('click', this._onNextClick);
@@ -115,13 +115,12 @@ define([
 	 * @private
 	 */
 	Gallery.prototype._onPrevClick = function() {
-
 		// подтягивание контейнера для превью
 		var container = this.element.querySelector('.gallery__thumbnails')
 		// определение ширины одной превью
 		var thumbnailWidth = this.element.querySelector('.gallery__thumbnail').offsetWidth;
 		// определение текущего смещения
-		var currentTranslate = container.style.transform;
+		var currentTranslate = container.style.marginLeft;
 		// оцифровка текущего смещения
 		if (currentTranslate == '') {
 			currentTranslate = 0;
@@ -132,7 +131,7 @@ define([
 		// определение нужно ли скролить превьюшки
 		if (currentTranslate > 0) {
 			// скролим до тех пор пока не дойдем до конца
-			container.style.transform = 'translateX(-' + (currentTranslate - thumbnailWidth) + 'px)';
+			container.style.marginLeft = -(currentTranslate - thumbnailWidth) + 'px';
 		};
 	};
 
@@ -142,7 +141,6 @@ define([
 	 * @private
 	 */
 	Gallery.prototype._onNextClick = function() {
-
 		// подтягивание контейнера для превью
 		var container = this.element.querySelector('.gallery__thumbnails')
 		// определение ширины одной превью
@@ -154,7 +152,7 @@ define([
 		// определение ширины всех превьюшек
 		var thumbnailsWidth = thumbnailWidth * thumbnailCount;
 		// определение текущего смещения
-		var currentTranslate = container.style.transform;
+		var currentTranslate = container.style.marginLeft;
 		// оцифровка текущего смещения
 		if (currentTranslate == '') {
 			currentTranslate = 0;
@@ -163,9 +161,9 @@ define([
 		};
 
 		// определение нужно ли скролить превьюшки
-		if (containerWidth + currentTranslate < thumbnailsWidth) {
+		if (containerWidth < thumbnailsWidth) {
 			// скролим до тех пор пока не дойдем до конца (описать)
-			container.style.transform = 'translateX(-' + (currentTranslate + thumbnailWidth) + 'px)';
+			container.style.marginLeft = -(currentTranslate + thumbnailWidth) + 'px';
 		};
 	};
 
@@ -178,7 +176,8 @@ define([
 	Gallery.prototype._onClickThumbnail = function(evt) {
 		if (evt.target.classList.contains('gallery__thumbnail--selected')) {
 			return;
-		} else {
+		}
+		if (evt.target.classList.contains('gallery__thumbnail')) {
 			// поиск активной картинки
 			if (this.element.querySelector('.gallery__thumbnail--selected')) {
 			// деактивация активной картинки

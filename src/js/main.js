@@ -14,7 +14,7 @@ define([
 
 	// работа с формой
 	var MIN_DAYS = 1; // константа минимального количества дней в бронировании
-	// подтягивание годы формы из DOM
+	// подтягивание ноды формы из DOM
 	var pageForm = document.querySelector('.page-form');
 	// подтягивание инпутов из DOM
 	var arrivalInput = pageForm.querySelector('[name="date-arrival"]');

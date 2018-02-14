@@ -21,6 +21,11 @@
 		background-color: transparent;
 		border: 0;
 		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			transform: scale(1.2, 1.2);
+		}
 	}
 
 	&__close-btn::before,
@@ -79,6 +84,13 @@
 		height: 25px;
 		cursor: pointer;
 		z-index: 2;
+		opacity: 0.7;
+		transition: 0.3s;
+
+		&:hover {
+			transform: scale(1.1, 1.1);
+			opacity: 1;
+		}
 	}
 
 	&__control-prev {
@@ -98,11 +110,11 @@
 	&__container {
 		margin: 0 5px;
 		overflow: hidden;
-		transition: 0.5s linear;;
 	}
 
 	&__thumbnails {
 		display: flex;
+		transition: margin 0.5s;
 	}
 
 	&__thumbnail {
